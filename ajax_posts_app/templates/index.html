@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Posts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container ">
+        <h1 class="my-3">My Posts</h1>
+        <div class="row">
+            {%for post in all_posts%}
+            <div class="col-md-4 py-3 px-lg-5 border bg-light">
+                <p class="font-italic text-right">{{post.created_at}}</p><br>
+                <p class="text-justify">{{post.content}}</p></div>
+            {%endfor%}
+        </div>
+    
+        <div>
+            <h2 class="my-3">Add a note:</h2>
+            <form action="/create_post" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <textarea class="form-control w-50" name="post_content" rows="3"></textarea>
+                    <input type="submit" class="btn btn-primary my-3" name="" id="">
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
