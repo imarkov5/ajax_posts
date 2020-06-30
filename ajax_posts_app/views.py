@@ -7,6 +7,9 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def create_post(request):
+def create_post_ajax(request):
     Post.objects.create(content=request.POST['post_content'])
-    return redirect('/')
+    context ={
+        'all_posts': Post.objects.all()
+    }
+    return render(request, 'post_ajax.html', context)

@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('create_post', views.create_post),
+    path('create_post_ajax', views.create_post_ajax)
 ]

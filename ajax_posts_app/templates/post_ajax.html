@@ -1,0 +1,8 @@
+<div class="row" id="posts">
+    {%for post in all_posts%}
+    <div class="col-md-4 py-3 px-lg-5 border bg-light">
+        <p class="font-italic text-right">{{post.created_at}}</p><br>
+        <p class="text-justify">{{post.content}}</p>
+    </div>
+    {%endfor%}
+</div>
